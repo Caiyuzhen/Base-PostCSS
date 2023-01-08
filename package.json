@@ -1,0 +1,23 @@
+{
+  "name": "Base-PostCSS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Caiyuzhen/Base-PostCSS.git",
+  "author": "Zen <caiyuzhen00@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "postcss style.css -o dist.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-preset-env": "^7.8.3",
+    "postcss-pxtorem": "^6.0.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-standard": "^29.0.0"
+  },
+  "browserslist": [
+    "cover 95%"
+  ]
+}
