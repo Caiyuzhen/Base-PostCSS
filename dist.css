@@ -1,3 +1,5 @@
+/* 使用 mixins */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,40 +13,61 @@ main {
   height: 100vh;
   background: hsl(220, 10%, 5%);
   font-size: 1.5rem;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: var(--normal-color);
-}
-
-.boxes {
-  display: -webkit-box;
-  display: flex;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  height: 100%;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-}
-
-.boxes .box {
-    width: 100px;
-    height: 100px;
-    background: -webkit-linear-gradient(294deg, rgba(0, 12, 168, 1) 0%, rgba(255, 0, 238, 1) 100%);
-    background: linear-gradient(156deg, rgba(0, 12, 168, 1) 0%, rgba(255, 0, 238, 1) 100%);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    border-radius: 10px;
-    box-shadow: 0 0 48px rgba(255, 0, 238, 0.2);
+main h1 {
+    color: var(--normal-color);
   }
 
-.boxes .box:hover {
-      background: -webkit-linear-gradient(294deg, rgba(255, 0, 238, 1) 0%, rgba(0, 12, 168, 1) 100%);
-      background: linear-gradient(156deg, rgba(255, 0, 238, 1) 0%, rgba(0, 12, 168, 1) 100%);
+main .boxes {
+    display: -webkit-box;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    height: 400px;
+  }
 
-      /* 缓动过渡 */
+main .boxes .box { /* ⚡️⚡️需要加上 & 跟空格来使用最新的 CSS 嵌套语法！！ */
+      width: 200px;
+      height: 100px;
+      background: -webkit-linear-gradient(294deg, rgba(0, 12, 168, 1) 0%, rgba(255, 0, 238, 1) 100%);
+      background: linear-gradient(156deg, rgba(0, 12, 168, 1) 0%, rgba(255, 0, 238, 1) 100%);
       -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
+      border-radius: 10px;
+      box-shadow: 0 0 48px rgba(255, 0, 238, 0.2);
     }
+
+main .boxes .box:hover {
+        background: -webkit-linear-gradient(294deg, rgba(255, 0, 238, 1) 0%, rgba(0, 12, 168, 1) 100%);
+        background: linear-gradient(156deg, rgba(255, 0, 238, 1) 0%, rgba(0, 12, 168, 1) 100%);
+
+        /* 缓动过渡 */
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+      }
+
+main ul {
+    display: -webkit-box;
+    display: flex;
+    width: 100%;
+  }
+
+main ul li {
+      width: 100%;
+      color: var(--normal-color);
+    }
+
+main ul li button {
+        /* 使用 mixins */
+        border-radius: 6px;
+        width: 88px;
+        height: 32px;
+        background-color: #3370ff;
+        outline: none;
+      }
